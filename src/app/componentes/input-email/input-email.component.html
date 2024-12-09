@@ -1,0 +1,25 @@
+
+
+<ion-card>
+  <ion-card-content>
+    Crear Usuario
+<ion-input [(ngModel)]="usuario.nombre" label="Nombre" label-placement="floating" fill="solid" placeholder="Ingrese su Nombre"></ion-input>
+<ion-input [(ngModel)]="usuario.password"label="Contraseña" label-placement="floating" fill="solid" type ="password" placeholder="Ingrese su Contraseña"></ion-input>
+<ion-input [(ngModel)]="usuario.rut"label="Rut" label-placement="floating" fill="solid" placeholder="Ingrese su Rut"></ion-input>
+<ion-input [(ngModel)]="usuario.telefono"label="Ingrese su Telefono" label-placement="floating" fill="solid" type="tel" placeholder="+569"></ion-input>
+<ion-input [(ngModel)]="usuario.email"
+  type="email"
+  fill="solid"
+  label="Email"
+  placeholder="Ingrese un correo valido"
+  labelPlacement="floating"
+  errorText="Correo Invalido"
+  ngModel
+  email></ion-input>
+  <ion-button (click)="registrarse()">
+    <ion-icon slot="start" name="star"></ion-icon>
+    Crear o Editar Usuario
+  </ion-button>
+
+</ion-card-content>
+</ion-card>

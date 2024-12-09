@@ -1,0 +1,54 @@
+<ion-content>
+
+  <div style="text-align: center; margin:10px">
+    <ion-button (click)="nuevo()">Crear Nueva Tarea</ion-button>
+  </div>
+
+
+
+
+<div *ngIf="enableNewTarea">
+  <ion-item>
+    <ion-button slot="end" (click)="enableNewTarea = false">Cerrar
+      <ion-icon  name="close-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-card-content>
+<ion-card>
+  <ion-input [(ngModel)]="newTarea.nombre" label="Nombre de Tarea" label-placement="floating" fill="solid" placeholder="Nombre de Tarea"></ion-input>
+  <ion-input [(ngModel)]="newTarea.descripcion" label="Descripción de Tarea" label-placement="floating" fill="solid" placeholder="Descripción de Tarea"></ion-input>
+  <ion-input [(ngModel)]="newTarea.prioridad" label="Prioridad de Tarea" label-placement="floating" fill="solid" placeholder="1, 2, 3 o 4"></ion-input>
+  <br>
+
+  <br>
+  <ion-button class="ion-margin-start2" (click)="guardarTarea()">
+  <ion-icon slot="start" name="star"></ion-icon>
+    Guardar Tarea
+  </ion-button>
+</ion-card>
+  </ion-card-content>
+</div>
+<ion-card class="carta">
+  <ion-card-content>
+<ion-item *ngFor="let tarea of tareas">
+  <ion-list>
+  <ion-label>{{tarea.nombre}}</ion-label>
+  <br>
+  <ion-label>{{tarea.descripcion}}</ion-label>
+  <br>
+  <ion-label>{{tarea.prioridad}}</ion-label>
+</ion-list>
+  <ion-buttons slot="end">
+    <ion-button (click)="newTarea = tarea; enableNewTarea = true"   >
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button (click)="deleteTar(tarea)">
+      <ion-icon slot="icon-only" color="danger"name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+</ion-item>
+
+</ion-card-content>
+</ion-card>
+</ion-content>

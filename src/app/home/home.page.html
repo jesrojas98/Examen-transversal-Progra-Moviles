@@ -1,0 +1,30 @@
+
+
+<ion-content [fullscreen]="true" class="fondo">
+<br><br><br>
+
+  <ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="usuario.email" label="Ingrese su Correo" label-placement="floating" fill="solid" placeholder="Ingrese su Rut"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="usuario.password" label="Ingrese su Contraseña" label-placement="floating" fill="solid" type="password" ></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+
+  <ion-button  class="ion-margin-start1" shape="round" (click)="ingresar()">Ingresa</ion-button>
+
+  <ion-button  [routerLink]="['/crear-usuario']" class="ion-margin-start2" shape="round">Crear Usuario</ion-button>
+
+
+  <div *ngIf="uid.length">
+  <div style="text-align: center; margin:10px">
+  <ion-button class="ion-margin-start3" shape="round" (click)="salir()">Cerrar Sesion</ion-button>
+</div>
+</div>
+  
+
+  
+</ion-content>

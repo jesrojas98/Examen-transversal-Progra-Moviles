@@ -1,0 +1,24 @@
+<!-- <ion-item *ngFor="let tarea of tareas">
+
+<ion-card class="carta">
+  <ion-card-header>
+    <ion-card-title>{{tarea.nombre}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>  {{tarea.descripcion}}</ion-card-content>
+  <ion-card-content>Prioridad: {{tarea.prioridad}}</ion-card-content>
+</ion-card>
+</ion-item> -->
+<div cdkDropList class="listaTarea" (cdkDropListDropped)="drop($event)">
+  @for (tarea of tareas; track tareas) {
+    <div class="caja" cdkDrag>
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <ion-card class="carta">
+        <ion-card-header>
+          <ion-card-title>{{tarea.nombre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>  {{tarea.descripcion}}</ion-card-content>
+        <ion-card-content>Prioridad: {{tarea.prioridad}}</ion-card-content>
+      </ion-card>
+    </div>
+  }
+</div>
